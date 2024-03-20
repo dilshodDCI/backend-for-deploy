@@ -17,6 +17,10 @@ const PORT = process.env.PORT || 5000;
 
 app.use("/user", user);
 
+app.get("/", (req, res) => {
+  res.json({ msg: "Hello World! I am online" });
+});
+
 mongoose
   .connect(process.env.CONNECTION_URL)
   .then(() =>
